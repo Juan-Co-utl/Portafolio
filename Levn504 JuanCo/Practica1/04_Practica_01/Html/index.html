@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Css/bootstrap.min.css">
+    <title>Directivas Vue model bind</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(162, 235, 162);
+
+        }
+        .mb-3{
+            border: 4px solid black;
+            border-radius: 5px;
+            background-color: green;
+
+        }
+    </style>
+</head>
+<body>
+
+    
+    <hr>
+    <section id="componente">
+    <header style="background-color: rgb(8, 57, 0); text-align: center;">
+        <h1 style="color: rgb(224, 255, 217); font: bolder; font-family: 'Courier New', Courier, monospace;">Encuesta de Progamación</h1>
+    </header>
+    <div class="mb-3">
+        <h3>¿Te gusta programar?</h3>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" id="si" name="Encuesta" value="si" @click="MostrarPregunta()" v-model="Mostrar">
+        <label class="form-check-label" for="si">si</label>
+        </div>
+        <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" id="no" name="Encuesta" value="no" @click="MostrarPregunta()" v-model="Mostrar">
+        <label class="form-check-label" for="no">no</label><div>
+        </div>
+        </div>
+    </div>
+        <div v-if="Mostrar == 'si'">
+            <div class="mb-3">
+                <h3>¿Cuanto tiempo llevas programando?</h3>
+                <input type="number" class="form-control" v-model="anios">
+            </div>
+
+            <div class="mb-3">
+                <h3>¿Cuántos lenguajes de programación conoces?</h3>
+                <input type="number" class="form-control" v-model="numLengs">
+            </div>
+
+            <div class="mb-3">
+                <h3>Ingresa los lenguajes:</h3>
+                <div class="input-group">
+                    <input type="text" class="form-control" v-model="lengTemp" @keyup.enter="agregarLenguaje()">
+                    <button class="btn btn-success" @click="agregarLenguaje()">Añadir</button>
+                </div>
+            </div>
+            <div class="mb-3">
+            <h4>Lista de lenguajes ingresados:</h4>
+                <ul class="list-group">
+                    <li class="list-group-item" v-for="item in lengsKnown">{{ item }}</li>
+                </ul>
+            </div>
+        </div>
+        <div v-if="Mostrar =='no'" class="mb-3">
+            <h1>Entonces ¿Qué haces aquí wey?</h1>
+        </div>
+    
+
+    </section>
+
+    
+    <script src="../Js/vue.js"></script>
+    <script src="../Js/Script.js"></script>
+    <!--script>
+        const mountedApp = app.mount('#app')
+    </script-->
+</body>
+</html>

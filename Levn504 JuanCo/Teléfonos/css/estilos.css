@@ -1,0 +1,17 @@
+  body {
+            background-color: #b8ffb1;
+        }
+        .header {
+            background-color: #1b9b1b;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .card-custom {
+            background-color: #b8ffb1;
+            border: 10px solid #2f7d2f;
+        }
+        .h2 {
+            text-align: center;
+            color: #1b9b1b;
+        }

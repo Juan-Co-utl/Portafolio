@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>VUE</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/estilos.css" />
+    </head>
+    <body>
+        <header class="bg-primary text-center text-white p-2">
+            <span class="h2">Vue - filtros</span>
+        </header>
+
+        <section class="container text-center" id="clases">
+            <div class="row">
+                <div class="col-8 offset-3 my-3">
+                    <input type="range" min="0" max="10" v-model="minimo">
+                    <h5 v-text="minimo"></h5>
+                    <ul>
+                        <li class="card" v-for="(juego, index) in mejorPuntuacion" :key="index">
+                            <h2>{{juego.titulo}}</h2>
+                            <p>{{juego.descripcion}}</p>
+                            <p>{{juego.puntaje}}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="bg-secondary text-center text-white">
+            <span class="h2">Frameworks</span>
+        </footer>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/vue_3_5.js"></script>
+        <script src="js/funciones.js"></script>
+    </body>
+</html>

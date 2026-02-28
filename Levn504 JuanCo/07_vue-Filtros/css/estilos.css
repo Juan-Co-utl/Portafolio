@@ -1,0 +1,11 @@
+section{
+    background-color: #dde4e6;
+    padding: 20px 0;
+}
+
+.completado{
+    text-decoration: line-through;
+}
+.div{
+    text-align: center;
+}
