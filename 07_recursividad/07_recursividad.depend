@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1741287046 source:d:\codeblocks juan\u3_levn204\07_recursividad\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
+1741286956 source:d:\codeblocks juan\u3_levn204\07_recursividad\potencia.c
+	<stdio.h>
+	<stdlib.h>
+	"libreria_h.h"
+
+1741286980 d:\codeblocks juan\u3_levn204\07_recursividad\libreria_h.h
+
