@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/05_Formativa/Css/bootstrap.min.css">
+    <title>Instalación Vue</title>
+</head>
+
+<body>
+
+    <section id="componente" class="container mt-4">
+
+        <header>
+            <img v-bind:src="imagen" alt="">
+        </header>
+
+        <article>
+            <h2>Encuesta de Programación</h2>
+
+            <div class="mb-3">
+                <label><b>1. ¿Te gusta programar?</b></label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="si" value="Si" v-model="gustaProgramar">
+                    <label class="form-check-label" for="si">Si</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="no" value="No" v-model="gustaProgramar">
+                    <label class="form-check-label" for="no">No</label>
+                </div>
+            </div>
+
+            <div v-if="gustaProgramar == 'Si'">
+                <div class="mb-3">
+                    <label>2. ¿Cuántos años llevas programando?</label>
+                    <input type="number" class="form-control" v-model="anios">
+                </div>
+
+                <div class="mb-3">
+                    <label>3. ¿Cuántos lenguajes de programación conoces?</label>
+                    <input type="number" class="form-control" v-model="numLenguajes">
+                </div>
+
+                <div class="mb-3">
+                    <label>4. Ingresa los lenguajes uno por uno:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" v-model="lenguajeTemporal" @keyup.enter="agregarLenguaje()">
+                        <button class="btn btn-success" @click="agregarLenguaje()">Añadir</button>
+                    </div>
+                </div>
+
+                <h5>Lista de lenguajes ingresados:</h5>
+                <ul class="list-group">
+                    <li class="list-group-item" v-for="item in lenguajesConocidos">{{ item }}</li>
+                </ul>
+            </div>
+
+            <div v-else-if="gustaProgramar == 'No'" class="alert alert-secondary">
+                Entendido, la programación no es para todos.
+            </div>
+        </article>
+        <hr>
+
+    </section>
+
+    <script src="/05_Formativa/Js/vue.js"></script>
+    <script src="/05_Formativa/Js/main.js"></script>
+
+</body>
+</html>
